@@ -41,3 +41,20 @@ print(isPalindrome2(110))
 #Runtime: 62ms
 #Beats: 71.15%
 #memory: 13.9 || :(
+
+# Solution 3: || Algorithmic way
+def isPalindrome(x: int) -> bool:
+        if x < 0 or (x > 0 and x % 10 == 0):
+            return False
+	
+        result = 0
+        while x > result:
+            result = result * 10 + x % 10
+            x = x // 10
+            
+        return True if (x == result or x == result // 10) else False
+
+# Accapted!
+#Runtime: 54ms
+#Beats: 90.52%
+#memory: 13.9 || :)
