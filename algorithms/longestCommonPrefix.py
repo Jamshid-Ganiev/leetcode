@@ -10,14 +10,17 @@ strs = ['jacob', 'jackson', 'jacin', 'jash']
 def longestCommonPrefix(strs: list[str]) -> str:
     result = ""
     prefix = {}
-    fel = min(strs, key=len)
+    fel = strs[0]
+    for i in range(len(fel)):
+        prefix[i] = fel[:i+1]
     try:
+        i = 0
         for index in range(len(fel)):
-            prefix[index] = fel[:index+1]
             for x in strs:
-                if prefix[index] != x[:index+1]:
+                if prefix[i] != x[:index+1]:
                     return result
-            result = prefix[index]
+            result = prefix[i]
+            i += 1
         return result
     except IndexError:
         return result
