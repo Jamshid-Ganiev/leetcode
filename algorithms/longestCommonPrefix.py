@@ -10,17 +10,14 @@ strs = ['jacob', 'jackson', 'jacin', 'jash']
 def longestCommonPrefix(strs: list[str]) -> str:
     result = ""
     prefix = {}
-    fel = strs[0]
-    for i in range(len(fel)):
-        prefix[i] = fel[:i+1]
+    fel = min(strs, key=len)
     try:
-        i = 0
         for index in range(len(fel)):
+            prefix[index] = fel[:index+1]
             for x in strs:
-                if prefix[i] != x[:index+1]:
+                if prefix[index] != x[:index+1]:
                     return result
-            result = prefix[i]
-            i += 1
+            result = prefix[index]
         return result
     except IndexError:
         return result
@@ -28,4 +25,25 @@ def longestCommonPrefix(strs: list[str]) -> str:
 # Runtime: 39ms, |beats 51.72% :(
 # M:14: |Beats 41.33 :(
 
-# Solution2:
+# Solution2: || I tried to opotimize it by myself, 
+                # First i found the element with least number of chars in the list, divided it into prefixes.
+
+def longestCommonPrefix(strs: list[str]) -> str:
+    result = ""
+    prefix = {}
+    fel = min(strs, key=len)
+    try:
+        for index in range(len(fel)):
+            prefix[index] = fel[:index+1]
+            for x in strs:
+                if prefix[index] != x[:index+1]:
+                    return result
+            result = prefix[index]
+        return result
+    except IndexError:
+        return result
+
+# Runtime: 35ms, |beats 73.06% :)
+# M:13.8: |Beats 81.80 :)
+
+# try to optmize it more   
