@@ -3,7 +3,7 @@
 
 # Solution1: The 1st brute force solution came to my mind:
     # When I was doing smth else (not coding or even studying), solution came to my mind spontaneously. Then I opened my laptop
-    # write the code and checked. Results: R: beats 82.39% with 30ms. M: 13.9 
+    # wrote the code and checked. Results: Rt: beats 82.39% with 30ms. My: 13.9 
 def isValid(s: str) -> bool:
     openings = ['[', '{','(']
     closings = [']', '}',')']
