@@ -5,7 +5,7 @@
     # For example, pow(x, 0.5) in c++ or x**0.5 in python
 
 
-# Solution 1: | Without using any buil-in function or operators
+# Solution 1: | Without using any built-in functions or operators
 def mySqrt(x: int) -> int:
     if x == 0:
         return 0
@@ -23,7 +23,7 @@ def mySqrt(x: int) -> int:
     return math.floor(math.sqrt(x))
 
 
-# Solution 3:
+# Solution 3: |using math python library | Both Memory and Time Efficient
 import math
 def mySqrt(x: int) -> int:
     return int(abs(math.sqrt(x)))
