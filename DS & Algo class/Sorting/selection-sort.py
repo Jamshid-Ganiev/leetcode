@@ -10,8 +10,8 @@ THE DIFFERENCE between the selction and bubble sort is that the selection sort r
 # Algorithm
 # Sorts a sequnce in ascending order using the selection sort algorithm.
 def selectionSort(theSeq):
-    n = len(theSeq) - 1
-    for i in range(n):
+    n = len(theSeq)
+    for i in range(n -1 ):
         smallestValIndex = i
         # determine if any other element contains a smaller value.
         for j in range(i + 1, n):
@@ -29,5 +29,5 @@ print(theSeq)
 selectionSort(theSeq)
 print(theSeq)
 
->> [10, 51, 2, 18, 4, 31, 13, 5, 23, 64, 29]
->> [2, 4, 5, 10, 13, 18, 23, 31, 51, 64, 29]
+# >> [10, 51, 2, 18, 4, 31, 13, 5, 23, 64, 29]
+# >> [2, 4, 5, 10, 13, 18, 23, 31, 51, 64, 29]
